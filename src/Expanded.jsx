@@ -27,19 +27,19 @@ class Expanded extends React.Component {
       })
       .then(response => {
         console.log(this.state.cat.data.animal.url);
-        fetch(`http://localhost:3001/description`, {
-          // headers: {
-          //   Accept: 'text/plain',
-          //   'Content-Type': 'text/plain'
-          // },
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
+        fetch(
+          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com
+        :3001/description`,
+          {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
 
-          method: 'POST',
-          body: JSON.stringify({ url: this.state.cat.data.animal.url })
-        })
+            method: 'POST',
+            body: JSON.stringify({ url: this.state.cat.data.animal.url })
+          }
+        )
           .then(result => {
             console.log('result', result);
             return result.json();

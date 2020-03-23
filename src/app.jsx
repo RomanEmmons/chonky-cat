@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './List.jsx';
-const { keys } = require('../keys.js');
-
+import { keys } from '../keys.js';
 import { Client } from '@petfinder/petfinder-js';
 
 const client = new Client({
