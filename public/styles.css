@@ -38,7 +38,6 @@ body {
 
 /* EXPANDED */
 .Expanded {
-  cursor: pointer;
   background-color: black;
   display: inline-block;
   vertical-align: middle;

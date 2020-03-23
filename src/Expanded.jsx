@@ -28,8 +28,7 @@ class Expanded extends React.Component {
       .then(response => {
         console.log(this.state.cat.data.animal.url);
         fetch(
-          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com
-        :3001/description`,
+          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000/description`,
           {
             headers: {
               Accept: 'application/json',
