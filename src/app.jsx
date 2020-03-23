@@ -90,7 +90,7 @@ class App extends React.Component {
           <div>
             <h2>
               There are {this.state.cats === null ? 0 : this.state.cats.length}{' '}
-              thicc cats in your area!
+              thicc hambs in your area!
             </h2>
           </div>
         </div>
