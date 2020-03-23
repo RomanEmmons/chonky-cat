@@ -1,0 +1,177 @@
+/* BODY */
+body {
+  background-color: rgba(245, 248, 252);
+  margin: 0;
+  background: url('https://media4.s-nbcnews.com/j/streams/2014/June/140605/2D274906032272-today-fat-cat-creation-140605-post-tease.fit-760w.jpg')
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* IMAGES */
+.thumbnail {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+  box-shadow: 0vw 0vw 5vw 0vw #ff0000;
+}
+
+/* LIST */
+.List {
+  text-align: center;
+}
+
+/* LISTITEM */
+.ListItemSmall {
+  background-color: black;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-style: solid;
+  border-width: large;
+  border-radius: 1%;
+  margin: 5%;
+  width: auto;
+  padding: 4%;
+}
+
+/* EXPANDED */
+.Expanded {
+  background-color: black;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border-style: solid;
+  border-width: large;
+  border-radius: 1%;
+  margin: 5%;
+  width: auto;
+  padding: 4%;
+}
+
+.fullSizePhotos {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+  box-shadow: 0vw 0vw 5vw 0vw #ff0000;
+  margin: 5%;
+}
+
+/* BANNER */
+.banner {
+  background-color: black;
+  margin-top: -15px;
+  padding-bottom: 3%;
+}
+
+/* FORM */
+div.search {
+}
+
+.entry {
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  font-family: 'Permanent Marker';
+  color: #ff0000;
+  font-size: 1.5vw;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type='text'] {
+  border: 2px solid orange;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type='text']:focus {
+  border-color: #333;
+}
+
+input[type='submit'] {
+  /* padding: 5px 15px; */
+  background: orange;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* TEXT */
+h1 {
+  color: orange;
+  text-shadow: 0.2vw 0.2vw #ff0000;
+  font-family: 'Permanent Marker';
+  font-size: 8vw;
+  text-align: center;
+  font-weight: 700;
+  margin-top: -0.1em;
+  margin-left: 0.1em;
+  margin-bottom: auto;
+  padding-top: 3%;
+}
+
+h2 {
+  color: orange;
+  text-align: center;
+  text-shadow: 0.2vw 0.2vw #ff0000;
+  font-size: 4vw;
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}
+
+h3 {
+  text-align: center;
+  color: orange;
+  text-shadow: 0.2vw 0.2vw black;
+  font-family: 'Permanent Marker';
+  font-size: 3vw;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}
+
+h4 {
+  color: #ff0000;
+  font-size: 2vw;
+
+  font-family: 'Permanent Marker';
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+
+p {
+  font-family: 'Permanent Marker';
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: 'Permanent Marker';
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: 'Permanent Marker';
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}

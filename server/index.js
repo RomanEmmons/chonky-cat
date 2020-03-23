@@ -1,13 +1,24 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+var express = require('express');
+var bodyParser = require('body-parser');
+const { scrape } = require('../scraper.js');
+var app = express();
 
-const port = 3001;
-
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.post('/description', (req, res) => {
+  console.log('req.body', req.body.url);
+  scrape(req.body.url, (err, result) => {
+    if (err) {
+      console.log('err in post callback: ', err);
+    } else {
+      res.json(result);
+    }
+  });
+});
 
-app.listen(port, () => console.log(`listening on port ${port}!`));
+app.listen(3001, function() {
+  console.log('listening on port  3001!');
+});
