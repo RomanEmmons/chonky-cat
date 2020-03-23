@@ -75,14 +75,10 @@ class App extends React.Component {
           <h1>Chonky Cat</h1>
           <div className="entry">
             <form onSubmit={this.handleSubmit}>
-              <label>
-                5 Digit Zip Code:
-                <input
-                  className="zip"
-                  type="text"
-                  onChange={this.handleChange}
-                />
-              </label>
+              <div className="label">
+                <label>5 Digit Zip Code:</label>
+              </div>
+              <input className="zip" type="text" onChange={this.handleChange} />
               <input type="submit" value="Submit" />
             </form>
           </div>
@@ -90,7 +86,7 @@ class App extends React.Component {
           <div>
             <h2>
               There are {this.state.cats === null ? 0 : this.state.cats.length}{' '}
-              thicc cats in your area!
+              thicc hambs in your area!
             </h2>
           </div>
         </div>

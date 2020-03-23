@@ -16,7 +16,7 @@ Ever feel like the odds are too great... or mayber that you're just too odd?
 -grandmajackie
 
 Home:
-http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3001
+http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000
 
 Related Links:
 https://www.cnet.com/news/this-cat-is-chonky-the-fat-cat-online-shrine-lifting-humans-from-despair/
