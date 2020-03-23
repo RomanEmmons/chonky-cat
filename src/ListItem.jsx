@@ -31,15 +31,18 @@ class ListItem extends React.Component {
       })
       .then(response => {
         // console.log(this.props.cat.url);
-        fetch(`http://localhost:3000/description`, {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
+        fetch(
+          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000/description`,
+          {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
 
-          method: 'POST',
-          body: JSON.stringify({ url: this.props.cat.url })
-        })
+            method: 'POST',
+            body: JSON.stringify({ url: this.props.cat.url })
+          }
+        )
           .then(result => {
             // console.log('result', result);
             return result.json();
