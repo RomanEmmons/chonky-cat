@@ -22,7 +22,7 @@ class ListItem extends React.Component {
     client.animal
       .show(this.props.cat.id)
       .then(response => {
-        console.log('id response', response);
+        // console.log('id response', response);
         this.setState({ cat: response });
       })
       .catch(error => {
@@ -30,23 +30,26 @@ class ListItem extends React.Component {
         console.log('error: ', error);
       })
       .then(response => {
-        console.log(this.props.cat.url);
-        fetch(`http://localhost:3000/description`, {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
+        // console.log(this.props.cat.url);
+        fetch(
+          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000/description`,
+          {
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
+            },
 
-          method: 'POST',
-          body: JSON.stringify({ url: this.props.cat.url })
-        })
+            method: 'POST',
+            body: JSON.stringify({ url: this.props.cat.url })
+          }
+        )
           .then(result => {
-            console.log('result', result);
+            // console.log('result', result);
             return result.json();
           })
           .then(response => {
             this.setState({ description: response });
-            console.log('response', response);
+            // console.log('response', response);
           })
           .catch(err => {
             console.log('err: ', err);
