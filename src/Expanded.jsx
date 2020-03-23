@@ -31,7 +31,7 @@ class Expanded extends React.Component {
 
           <a href={this.props.cat.url}>{this.props.cat.url}</a>
         </div>
-        ) : null}
+        )}
       </div>
     );
   }
