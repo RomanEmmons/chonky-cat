@@ -30,9 +30,10 @@ class ListItem extends React.Component {
         console.log('error: ', error);
       })
       .then(response => {
-        // console.log(this.props.cat.url);
+        console.log(this.props.cat.url);
         fetch(
-          `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000/description`,
+          // `http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000/description`,
+          'http://localhost:3000/description',
           {
             headers: {
               Accept: 'application/json',
@@ -44,12 +45,12 @@ class ListItem extends React.Component {
           }
         )
           .then(result => {
-            // console.log('result', result);
+            console.log('result', result);
             return result.json();
           })
           .then(response => {
             this.setState({ description: response });
-            // console.log('response', response);
+            console.log('response', response);
           })
           .catch(err => {
             console.log('err: ', err);
