@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react:dev": "webpack --d --watch",
-    "server:dev": "nodemon server/index.js"
+    "server:dev": "nodemon server/index.js",
+    "seed": "node seed/seed.js && node seed/closeConnection.js"
   },
   "repository": {
     "type": "git",
@@ -28,8 +29,10 @@
   "homepage": "https://github.com/RomanEmmons/chonky-cat#readme",
   "dependencies": {
     "@petfinder/petfinder-js": "^1.0.6",
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "mongoose": "^5.9.6",

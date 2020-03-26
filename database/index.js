@@ -27,7 +27,6 @@ const chonkSchema = mongoose.Schema({
   },
   description: String,
   photos: [String],
-  videos: String,
   contact: {
     email: String,
     phone: String,

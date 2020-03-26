@@ -1,6 +1,10 @@
 const { keys } = require('../keys.js');
 const { Client } = require('@petfinder/petfinder-js');
 const { Chonk, mongoose } = require('../database/index.js');
+const { scrape } = require('../scraper.js');
+
+// run seed.js then closeConnection.js
+//
 
 const client = new Client({
   apiKey: `${keys.petfinderKey}`,
@@ -14,7 +18,7 @@ const createCollection = async () => {
 
   let page = 1;
 
-  for (let i = page; i < 2; i++) {
+  for (let i = page; i < 32; i++) {
     await client.animal
       .search({
         type: 'Cat',
@@ -98,14 +102,65 @@ const save = async () => {
 
   const collection = await createCollection();
 
-  await Chonk.insertMany(collection, (err, item) => {
-    if (err) {
-      return console.log('err', err);
-    }
-    console.log('collection seeded');
-    mongoose.connection.close();
-    console.log('db closed!');
-    return;
+  const insert = new Promise((resolve, reject) => {
+    Chonk.insertMany(collection, (err, item) => {
+      if (err) {
+        console.log('err', err);
+        reject(err);
+      }
+      console.log('collection seeded');
+      resolve();
+    });
+  });
+
+  insert.then(results => {
+    catsIds.forEach(id => {
+      Chonk.find({ id: id }, (err, data) => {
+        if (err) {
+          console.log('err in Chonk.find: ', err);
+        } else {
+          console.log(data);
+          let des = new Promise((resolve, reject) => {
+            scrape(data[0].url, (err, result) => {
+              //console.log('result; ', result);
+              if (err) {
+                console.log('err in scrape: ', err);
+                reject(err);
+              } else {
+                console.log('result: ', result);
+                resolve(result);
+              }
+            });
+          });
+          des
+            .then(data => {
+              console.log('data', data);
+              if (data) {
+                //   return Chonk.findOneAndUpdate(
+                //     { id: id },
+                //     { description: data }
+                //   );
+                // } else return;
+                Chonk.findOneAndUpdate(
+                  { id: id },
+                  { description: data },
+                  { upsert: true },
+                  function(err, doc) {
+                    if (err) return console.log('err in findOne', err);
+                    return console.log('Succesfully saved.');
+                  }
+                );
+              }
+            })
+            .catch(err => {
+              console.log('err in des.then: ', err);
+            })
+            .then(updated => {
+              console.log('updated', updated);
+            });
+        }
+      });
+    });
   });
 };
 

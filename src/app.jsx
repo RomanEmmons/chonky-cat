@@ -15,6 +15,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       zip: null,
+      zipCodes: [],
       chonkFree: false,
       cats: []
     };
@@ -36,27 +37,34 @@ class App extends React.Component {
     return storeArr;
   }
 
+  componentDidUpdate() {
+    console.log('this.state.zipCodes', this.state.zipCodes);
+  }
+
   handleSubmit(event) {
-    this.setState({ cats: '' });
+    // this.setState({ cats: '' });
     if (this.state.zip === null || this.state.zip.length !== 5) {
       alert('Please enter a valid zip code!');
     }
     if (this.state.zip.length === 5) {
-      client.animal
-        .search({
-          type: 'Cat',
-          size: 'xlarge',
-          location: `${this.state.zip}`
-        })
+      // client.animal
+      //   .search({
+      //     type: 'Cat',
+      //     size: 'xlarge',
+      //     location: `${this.state.zip}`
+      //   })
+      console.log('about to fetch: ', this.state.zip);
+      fetch(
+        `https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/XmgA1EAKqMRmgrtcjjE5sqYPGUWxx8RQJpvZWh5yfoEqTl2eN9HIfS1xw3dAANyc/radius.json/${this.state.zip}/50/mile`
+      )
         .then(response => {
-          // Do something with `response.data.animals`
-          if (response.data.animals.length === 0) {
-            this.setState({ chonkFree: true });
-            return;
-          }
-          let catsArr = this.checkForPhotos(response.data.animals);
-          this.setState({ cats: catsArr });
-          console.log('this.state.cats: ', this.state.cats);
+          return response.json();
+        })
+        .then(data => {
+          let zipArr = [];
+          console.log('data', data);
+
+          // format zipcode data and setState
         })
         .catch(error => {
           // Handle the error
