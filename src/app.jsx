@@ -2,13 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './List.jsx';
-import { keys } from '../keys.js';
-import { Client } from '@petfinder/petfinder-js';
-
-const client = new Client({
-  apiKey: `${keys.petfinderKey}`,
-  secret: `${keys.petfinderSecret}`
-});
 
 class App extends React.Component {
   constructor(props) {
@@ -27,20 +20,6 @@ class App extends React.Component {
     this.setState({ [event.target.className]: event.target.value, cats: null });
   }
 
-  checkForPhotos(array) {
-    let storeArr = [];
-    array.forEach(item => {
-      if (item.photos[0] && item.photos[0].medium) {
-        storeArr.push(item);
-      }
-    });
-    return storeArr;
-  }
-
-  // componentDidUpdate() {
-  //   console.log('this.state.zipCodes', this.state.zipCodes);
-  // }
-
   handleSubmit(event) {
     // this.setState({ cats: '' });
     if (this.state.zip === null || this.state.zip.length !== 5) {
@@ -52,6 +31,7 @@ class App extends React.Component {
         url: `http://localhost:3000/input/${this.state.zip}`,
         success: result => {
           console.log('result!', result);
+          this.setState({ cats: result });
         }
       });
     }

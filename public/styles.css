@@ -30,7 +30,7 @@ body {
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-radius: 1%;
+  /* border-radius: 1%; */
   margin: 5%;
   width: auto;
   padding: 4%;
@@ -45,7 +45,7 @@ body {
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-radius: 1%;
+  /* border-radius: 1%; */
   margin: auto;
   width: auto;
   padding: 4%;

@@ -18,9 +18,7 @@ class Expanded extends React.Component {
       <div className="Expanded">
         <h1>{this.props.cat.name}</h1>
         {this.props.cat.photos.map((photo, i) => {
-          return (
-            <img key={i} className="fullSizePhotos" src={photo.medium}></img>
-          );
+          return <img key={i} className="fullSizePhotos" src={photo}></img>;
         })}
         <div>
           {this.props.description ? (
