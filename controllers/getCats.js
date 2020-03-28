@@ -24,20 +24,11 @@ const getCats = async (zip, res) => {
           catsArr.push(item[0]);
         }
       });
-      // console.log('catsArr: ', catsArr);
-      mongoose.connection.close();
-      console.log('db closed!');
-      //console.log('catsArr: ', catsArr);
       res.send(catsArr);
     })
     .catch(err => {
       return console.log('err: ', err);
     });
 };
-
-// getCats(zip).then(result => {
-//   console.log('result fin', result);
-//   return result;
-// });
 
 module.exports = getCats;
