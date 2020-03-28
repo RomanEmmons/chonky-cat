@@ -37,9 +37,9 @@ class App extends React.Component {
     return storeArr;
   }
 
-  componentDidUpdate() {
-    console.log('this.state.zipCodes', this.state.zipCodes);
-  }
+  // componentDidUpdate() {
+  //   console.log('this.state.zipCodes', this.state.zipCodes);
+  // }
 
   handleSubmit(event) {
     // this.setState({ cats: '' });
@@ -47,32 +47,13 @@ class App extends React.Component {
       alert('Please enter a valid zip code!');
     }
     if (this.state.zip.length === 5) {
-      // client.animal
-      //   .search({
-      //     type: 'Cat',
-      //     size: 'xlarge',
-      //     location: `${this.state.zip}`
-      //   })
-      console.log('about to fetch: ', this.state.zip);
-      fetch(
-        `https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/dZlBizCIaSEdFsyGtfn7kXgang9E90Ix3BfbRzfjzaPLw4ihAQdH5VEVnOB2Rz55/radius.json/${this.state.zip}/50/mile`
-        // `https://zipcodedownload.com/Radius?firstzipcode=50002&radiuscoverage=90&format=json&key=f9626c17803146868e1fafa668615513`
-      )
-        .then(response => {
-          return response.json();
-        })
-        .then(data => {
-          let zipArr = [];
-          console.log('data', data);
-          data.forEach;
-          // format zipcode data and setState
-        })
-        .catch(error => {
-          // Handle the error
-          console.log('error: ', error);
-        });
-    } else if (this.state.zip === null || this.state.zip.length !== 5) {
-      alert('Please enter a valid zip code!');
+      $.ajax({
+        method: 'GET',
+        url: `http://localhost:3000/input/${this.state.zip}`,
+        success: result => {
+          console.log('result!', result);
+        }
+      });
     }
     event.preventDefault();
   }

@@ -4,7 +4,7 @@ const db = require('../database/index.js');
 const { scrape } = require('../scraper.js');
 const app = express();
 const cors = require('cors');
-const axios = require('axios');
+const getCats = require('../controllers/getCats.js');
 
 app.use(cors());
 
@@ -13,10 +13,18 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.get('/:zip', (req, res) => {
+app.get('/input/:zip', async (req, res) => {
   console.log('req.params', req.params);
-  // `https://www.zipcodeapi.com/rest/XmgA1EAKqMRmgrtcjjE5sqYPGUWxx8RQJpvZWh5yfoEqTl2eN9HIfS1xw3dAANyc/radius.json/${this.state.zip}/90/mile`
-  res.send('got it!');
+  const zip = JSON.parse(req.params.zip);
+  const cats = getCats(zip, res);
+
+  // top25((err, docs) => {
+  //   if (err) {
+  //     res.send(404);
+  //   }
+  //   console.log('docs on server side', docs);
+  //   res.send(docs);
+  // });
 });
 
 app.post('/description', (req, res) => {
