@@ -1,6 +1,6 @@
 const { keys } = require('../keys.js');
 const { Client } = require('@petfinder/petfinder-js');
-const { Chonk, mongoose } = require('../database/index.js');
+const { Chonk, mongoose } = require('../database/mongo_index.js');
 const { scrape } = require('../scraper.js');
 
 // run seed.js then closeConnection.js

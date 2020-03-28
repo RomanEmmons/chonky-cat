@@ -55,7 +55,8 @@ class App extends React.Component {
       //   })
       console.log('about to fetch: ', this.state.zip);
       fetch(
-        `https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/XmgA1EAKqMRmgrtcjjE5sqYPGUWxx8RQJpvZWh5yfoEqTl2eN9HIfS1xw3dAANyc/radius.json/${this.state.zip}/50/mile`
+        `https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/dZlBizCIaSEdFsyGtfn7kXgang9E90Ix3BfbRzfjzaPLw4ihAQdH5VEVnOB2Rz55/radius.json/${this.state.zip}/50/mile`
+        // `https://zipcodedownload.com/Radius?firstzipcode=50002&radiuscoverage=90&format=json&key=f9626c17803146868e1fafa668615513`
       )
         .then(response => {
           return response.json();
@@ -63,7 +64,7 @@ class App extends React.Component {
         .then(data => {
           let zipArr = [];
           console.log('data', data);
-
+          data.forEach;
           // format zipcode data and setState
         })
         .catch(error => {

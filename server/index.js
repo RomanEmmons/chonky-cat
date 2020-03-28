@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+const db = require('../database/index.js');
 const { scrape } = require('../scraper.js');
 const app = express();
 const cors = require('cors');
