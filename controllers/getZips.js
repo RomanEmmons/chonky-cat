@@ -28,7 +28,6 @@ const getZips = async (inputZip, callback) => {
         if (err) {
           reject(console.log('err getting codes: ', err));
         } else {
-          db.end(console.log('Connection closed!'));
           resolve(result);
         }
       }

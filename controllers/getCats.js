@@ -24,10 +24,6 @@ const getCats = async (zip, res) => {
           catsArr.push(item[0]);
         }
       });
-      // console.log('catsArr: ', catsArr);
-      mongoose.connection.close();
-      console.log('db closed!');
-      //console.log('catsArr: ', catsArr);
       res.send(catsArr);
     })
     .catch(err => {
