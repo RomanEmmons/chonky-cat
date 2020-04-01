@@ -7,6 +7,28 @@ body {
   background-size: cover;
 }
 
+/* ABOUT */
+#about {
+  display: inline-flex;
+  text-align: left;
+}
+
+/* TABLE */
+.bold {
+  font-weight: bold;
+}
+
+.cell {
+  color: orange;
+  font-size: 1.5vw;
+  text-align: left;
+  padding: 0vw 2vw 2vw 0vw;
+}
+
+.row {
+  width: 20%;
+}
+
 /* IMAGES */
 .thumbnail {
   height: 100%;
@@ -31,7 +53,7 @@ body {
   border-style: solid;
   border-width: large;
   /* border-radius: 1%; */
-  margin: 5%;
+  margin: 3%;
   width: auto;
   padding: 4%;
 }
@@ -99,12 +121,6 @@ input[type='text'] {
   margin-right: auto;
 }
 
-/* input[type='text']:focus {
-  border-color: #333;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 input[type='submit'] {
   /* padding: 5px 15px; */
   background: orange;
@@ -153,7 +169,6 @@ h3 {
 h4 {
   color: #ff0000;
   font-size: 2vw;
-
   font-family: 'Permanent Marker';
   font-size: 14px;
   font-style: normal;
@@ -163,20 +178,20 @@ h4 {
 }
 
 p {
-  font-family: 'Permanent Marker';
-  font-size: 14px;
+  color: orange;
+  font-family: 'Lato';
+  font-size: 2vw;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
-  line-height: 20px;
 }
+
 blockquote {
   font-family: 'Permanent Marker';
-  font-size: 21px;
+  font-size: 2vw;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
-  line-height: 30px;
 }
 pre {
   font-family: 'Permanent Marker';

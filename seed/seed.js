@@ -17,7 +17,7 @@ const createCollection = async () => {
 
   let page = 1;
 
-  for (let i = page; i < 32; i++) {
+  for (let i = page; i < 33; i++) {
     await client.animal
       .search({
         type: 'Cat',

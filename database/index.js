@@ -12,7 +12,7 @@ db.once('open', () => {
 });
 
 const chonkSchema = mongoose.Schema({
-  id: { type: Number, unique: true, required: true },
+  id: { type: Number, unique: false, required: true },
   name: String,
   age: String,
   url: String,
@@ -34,25 +34,12 @@ const chonkSchema = mongoose.Schema({
       address1: String,
       address2: String,
       city: String,
+      state: String,
       postcode: String
     }
   }
 });
 
 const Chonk = mongoose.model('Chonk', chonkSchema);
-
-// console.log('Chonk', Chonk);
-
-// const insertChonk = () => {
-//   Chonk.save({ id: 1, name: 'Roman' })
-//     .then(result => {
-//       console.log('saved!', result);
-//     })
-//     .catch(err => {
-//       console.log('err:', err);
-//     });
-// };
-
-// insertChonk();
 
 module.exports = { Chonk, mongoose };

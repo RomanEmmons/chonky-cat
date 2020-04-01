@@ -1,11 +1,6 @@
 import React from 'react';
-const { keys } = require('../keys.js');
-import { Client } from '@petfinder/petfinder-js';
-
-const client = new Client({
-  apiKey: `${keys.petfinderKey}`,
-  secret: `${keys.petfinderSecret}`
-});
+import { keys } from '../keys.js';
+import CatFundamentals from './CatFundamentals.jsx';
 
 class Expanded extends React.Component {
   constructor(props) {
@@ -19,20 +14,43 @@ class Expanded extends React.Component {
         <h1>{this.props.cat.name}</h1>
         {this.props.cat.photos.map((photo, i) => {
           return <img key={i} className="fullSizePhotos" src={photo}></img>;
-        })}
+        })}{' '}
         <div>
-          {this.props.description ? (
-            <h3>{this.props.description}</h3>
-          ) : (
-            <h3>Sorry! This chonk's story is a mystery!</h3>
-          )}
-
-          <a href={this.props.cat.url}>{this.props.cat.url}</a>
+          <div id="about">
+            {this.props.description ? (
+              <p>{this.props.description}</p>
+            ) : (
+              <p>This chonk's story is a mystery!</p>
+            )}
+          </div>{' '}
+          <CatFundamentals
+            cat={this.props.cat}
+            attributes={this.props.cat.attributes}
+            breeds={this.props.cat.breeds}
+            location={this.props.cat.contact.address.city}
+            contact={this.props.cat.contact}
+          />
         </div>
-        )}
       </div>
     );
   }
 }
 
+{
+  /* <div>
+<p>Age: {this.props.cat.age}</p>
+<p>Gender: {this.props.cat.gender}</p>
+<p>Declawed: {this.props.cat.attributes.declawed}</p>
+<p>House Trained: {this.props.cat.attributes.house_trained}</p>
+<p>Shots Current: {this.props.cat.attributes.shots_current}</p>
+</div>
+<div>
+<p>Spayed/Neutered: {this.props.cat.attributes.spayed_neutered}</p>
+<p>Special Needs: {this.props.cat.attributes.special_needs}</p>
+<p>Breed: {this.props.cat.breeds.primary}</p>
+<p>Location: {this.props.cat.contact.address.city}</p>
+<p>Email: {this.props.cat.contact.email}</p>
+</div>
+<p>Phone: {this.props.cat.contact.phone}</p> */
+}
 export default Expanded;

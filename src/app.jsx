@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       zip: null,
       zipCodes: [],
-      chonkFree: false,
+      searching: false,
       cats: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -20,18 +20,27 @@ class App extends React.Component {
     this.setState({ [event.target.className]: event.target.value, cats: null });
   }
 
+  encodeHTML(s) {
+    return s
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/"/g, '&quot;');
+  }
+
   handleSubmit(event) {
     // this.setState({ cats: '' });
-    if (this.state.zip === null || this.state.zip.length !== 5) {
+    const cleanZip = this.encodeHTML(this.state.zip);
+    //console.log(typeof this.state.zip);
+    if (cleanZip === null || cleanZip.length !== 5) {
       alert('Please enter a valid zip code!');
     }
-    if (this.state.zip.length === 5) {
+    if (cleanZip.length === 5) {
       $.ajax({
         method: 'GET',
-        url: `http://localhost:3000/input/${this.state.zip}`,
+        url: `http://localhost:3000/input/${cleanZip}`,
         success: result => {
-          console.log('result!', result);
-          this.setState({ cats: result });
+          // console.log('result!', result);
+          this.setState({ cats: result, searching: true });
         }
       });
     }
@@ -54,10 +63,13 @@ class App extends React.Component {
           </div>
 
           <div>
-            <h2>
-              There are {this.state.cats === null ? 0 : this.state.cats.length}{' '}
-              thicc hambs in your area!
-            </h2>
+            {this.state.searching === true ? (
+              <h2>
+                There are{' '}
+                {this.state.cats === null ? 0 : this.state.cats.length} thicc
+                hambs in your area!
+              </h2>
+            ) : null}
           </div>
         </div>
 
