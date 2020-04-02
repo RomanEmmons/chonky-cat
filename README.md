@@ -1,10 +1,10 @@
 # chonky-cat
 
-Find inspiration and possibly a new friend when you use Chonky Cat to locate thicc cats that are trying to overcome adversity in your area!
+Ever feel like the odds are too great... or mayber that you're just too odd?
+
+Find inspiration and possibly a new friend when you use Chonky Cat to locate thicc cats that are overcoming adversity in your area!
 
 Enter in your 5 digit zip code and instantly get connected to big cats that are looking for a friend like you.
-
-Ever feel like the odds are too great... or mayber that you're just too odd?
 
 "Sometimes size does matter"
 -thiccluv415
@@ -13,7 +13,7 @@ Ever feel like the odds are too great... or mayber that you're just too odd?
 -Marie O.
 
 "I found all 12 of my friends on Chonky Cat."
--grandmajackie
+-Grandma Jackie
 
 ## links
 

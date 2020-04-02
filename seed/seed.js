@@ -91,6 +91,8 @@ const createCollection = async () => {
 };
 
 const save = async () => {
+  // TODO: clean this up, it's really messy
+
   await Chonk.deleteMany({}, err => {
     if (err) {
       console.log('err clearing db before seeding: ', err);
