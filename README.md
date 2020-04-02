@@ -6,15 +6,6 @@ Find inspiration and possibly a new friend when you use Chonky Cat to locate thi
 
 Enter in your 5 digit zip code and instantly get connected to big cats that are looking for a friend like you.
 
-"Sometimes size does matter"
--thiccluv415
-
-"Thicker than a Snicker, heavy like a Chevy. Here's a chonky cat, rub upon it's belly"
--Marie O.
-
-"I found all 12 of my friends on Chonky Cat."
--Grandma Jackie
-
 ## links
 
 Home:\
