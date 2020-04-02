@@ -14,17 +14,8 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/input/:zip', async (req, res) => {
-  console.log('req.params', req.params);
   const zip = JSON.parse(req.params.zip);
-  const cats = getCats(zip, res);
-
-  // top25((err, docs) => {
-  //   if (err) {
-  //     res.send(404);
-  //   }
-  //   console.log('docs on server side', docs);
-  //   res.send(docs);
-  // });
+  getCats(zip, res);
 });
 
 app.post('/description', (req, res) => {

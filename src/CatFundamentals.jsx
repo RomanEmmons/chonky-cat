@@ -29,8 +29,8 @@ class CatFundamentals extends React.Component {
       { key: 'special_needs', label: 'Special Needs', value: '' },
       { key: 'primary', label: 'Breed', value: '' },
       { key: 'city', label: 'Location', value: '' },
-      { key: 'email', label: 'Email', value: '' },
-      { key: 'phone', label: 'Phone', value: '' }
+      { key: 'phone', label: 'Phone', value: '' },
+      { key: 'email', label: 'Email', value: '' }
     ];
     // assign values based on props
     for (let i = 0; i < store.length; i++) {
@@ -104,7 +104,13 @@ class CatFundamentals extends React.Component {
                           questionMark
                         ) : cell.value.length > 0 ? (
                           cell.value === this.props.contact.email ? (
-                            <a href={'mailto:' + cell.value}>{cell.value}</a>
+                            <a color="red" href={'mailto:' + cell.value}>
+                              {cell.value}
+                            </a>
+                          ) : cell.value === this.props.contact.phone ? (
+                            <a color="red" href={'callto:' + cell.value}>
+                              {cell.value}
+                            </a>
                           ) : (
                             cell.value
                           )

@@ -4,7 +4,7 @@ const SF = 94102;
 
 const getZips = async (inputZip, callback) => {
   inputZip = JSON.stringify(inputZip);
-  const radius = 200;
+  const radius = 150;
 
   // find latitude and longitude of input
   const inputLatLng = await new Promise((resolve, reject) => {

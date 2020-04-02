@@ -36,21 +36,4 @@ class Expanded extends React.Component {
   }
 }
 
-{
-  /* <div>
-<p>Age: {this.props.cat.age}</p>
-<p>Gender: {this.props.cat.gender}</p>
-<p>Declawed: {this.props.cat.attributes.declawed}</p>
-<p>House Trained: {this.props.cat.attributes.house_trained}</p>
-<p>Shots Current: {this.props.cat.attributes.shots_current}</p>
-</div>
-<div>
-<p>Spayed/Neutered: {this.props.cat.attributes.spayed_neutered}</p>
-<p>Special Needs: {this.props.cat.attributes.special_needs}</p>
-<p>Breed: {this.props.cat.breeds.primary}</p>
-<p>Location: {this.props.cat.contact.address.city}</p>
-<p>Email: {this.props.cat.contact.email}</p>
-</div>
-<p>Phone: {this.props.cat.contact.phone}</p> */
-}
 export default Expanded;
