@@ -18,7 +18,7 @@ Enter in your 5 digit zip code and instantly get connected to big cats that are 
 ## links
 
 Home:\
-https:/filleraddress/
+http://ec2-18-144-70-214.us-west-1.compute.amazonaws.com:3000/
 
 Related Links:\
 https://www.cnet.com/news/this-cat-is-chonky-the-fat-cat-online-shrine-lifting-humans-from-despair/
