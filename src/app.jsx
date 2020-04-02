@@ -2,20 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './List.jsx';
-import { keys } from '../keys.js';
-import { Client } from '@petfinder/petfinder-js';
-
-const client = new Client({
-  apiKey: `${keys.petfinderKey}`,
-  secret: `${keys.petfinderSecret}`
-});
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       zip: null,
-      chonkFree: false,
+      zipCodes: [],
+      searching: false,
       cats: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -26,44 +20,29 @@ class App extends React.Component {
     this.setState({ [event.target.className]: event.target.value, cats: null });
   }
 
-  checkForPhotos(array) {
-    let storeArr = [];
-    array.forEach(item => {
-      if (item.photos[0] && item.photos[0].medium) {
-        storeArr.push(item);
-      }
-    });
-    return storeArr;
+  encodeHTML(s) {
+    return s
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/"/g, '&quot;');
   }
 
   handleSubmit(event) {
-    this.setState({ cats: '' });
-    if (this.state.zip === null || this.state.zip.length !== 5) {
+    // this.setState({ cats: '' });
+    const cleanZip = this.encodeHTML(this.state.zip);
+    //console.log(typeof this.state.zip);
+    if (cleanZip === null || cleanZip.length !== 5) {
       alert('Please enter a valid zip code!');
     }
-    if (this.state.zip.length === 5) {
-      client.animal
-        .search({
-          type: 'Cat',
-          size: 'xlarge',
-          location: `${this.state.zip}`
-        })
-        .then(response => {
-          // Do something with `response.data.animals`
-          if (response.data.animals.length === 0) {
-            this.setState({ chonkFree: true });
-            return;
-          }
-          let catsArr = this.checkForPhotos(response.data.animals);
-          this.setState({ cats: catsArr });
-          console.log('this.state.cats: ', this.state.cats);
-        })
-        .catch(error => {
-          // Handle the error
-          console.log('error: ', error);
-        });
-    } else if (this.state.zip === null || this.state.zip.length !== 5) {
-      alert('Please enter a valid zip code!');
+    if (cleanZip.length === 5) {
+      $.ajax({
+        method: 'GET',
+        url: `http://localhost:3000/input/${cleanZip}`,
+        success: result => {
+          // console.log('result!', result);
+          this.setState({ cats: result, searching: true });
+        }
+      });
     }
     event.preventDefault();
   }
@@ -74,20 +53,28 @@ class App extends React.Component {
         <div className="banner">
           <h1>Chonky Cat</h1>
           <div className="entry">
-            <form onSubmit={this.handleSubmit}>
+            <form tabIndex="-1" onSubmit={this.handleSubmit}>
               <div className="label">
                 <label>5 Digit Zip Code:</label>
               </div>
-              <input className="zip" type="text" onChange={this.handleChange} />
-              <input type="submit" value="Submit" />
+              <input
+                tabIndex="-1"
+                className="zip"
+                type="text"
+                onChange={this.handleChange}
+              />
+              <input tabIndex="-1" type="submit" value="Submit" />
             </form>
           </div>
 
           <div>
-            <h2>
-              There are {this.state.cats === null ? 0 : this.state.cats.length}{' '}
-              thicc hambs in your area!
-            </h2>
+            {this.state.searching === true ? (
+              <h2>
+                There are{' '}
+                {this.state.cats === null ? 0 : this.state.cats.length} thicc
+                hambs in your area!
+              </h2>
+            ) : null}
           </div>
         </div>
 

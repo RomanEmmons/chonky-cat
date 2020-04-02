@@ -7,19 +7,41 @@ body {
   background-size: cover;
 }
 
-.label {
-  font-size: 3vw;
-  text-align: center;
-  margin: auto;
-  width: auto;
+/* ABOUT */
+#about {
+  display: inline-flex;
+  text-align: left;
+}
+
+/* TABLE */
+.bold {
+  font-weight: bold;
+}
+
+img {
+  border-style: solid;
+  border-width: large;
+  border-color: orangered;
+}
+
+.cell {
+  color: orange;
+  text-shadow: 0.1vw 0.1vw #ff0000;
+  font-size: 1.5vw;
+  text-align: left;
+  padding: 0vw 2vw 2vw 0vw;
+}
+
+.row {
+  width: 20%;
 }
 
 /* IMAGES */
 .thumbnail {
   height: 100%;
   width: auto;
-  border-radius: 50%;
-  box-shadow: 0vw 0vw 5vw 0vw #ff0000;
+  /* border-radius: 50%;
+  box-shadow: 0vw 0vw 5vw 0vw #ff0000; */
 }
 
 /* LIST */
@@ -30,29 +52,32 @@ body {
 /* LISTITEM */
 .ListItemSmall {
   cursor: pointer;
-  background-color: black;
+  background-color: grey;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-radius: 1%;
-  margin: 5%;
+  border-color: orangered;
+
+  /* border-radius: 1%; */
+  margin: 3%;
   width: auto;
   padding: 4%;
 }
 
 /* EXPANDED */
 .Expanded {
-  background-color: black;
+  background-color: grey;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-radius: 1%;
+  border-color: orangered;
+  /* border-radius: 1%; */
   margin: auto;
   width: auto;
   padding: 4%;
@@ -61,20 +86,28 @@ body {
 .fullSizePhotos {
   height: 100%;
   width: auto;
-  border-radius: 50%;
-  box-shadow: 0vw 0vw 5vw 0vw #ff0000;
+  /* border-radius: 50%;
+  box-shadow: 0vw 0vw 5vw 0vw #ff0000; */
   margin: 5%;
   padding: auto;
 }
 
 /* BANNER */
 .banner {
-  background-color: black;
+  background-color: grey;
   margin-top: -15px;
   padding-bottom: 3%;
+  border-bottom: 0.25vw solid orangered;
 }
 
 /* FORM */
+
+.label {
+  font-size: 3vw;
+  text-align: center;
+  margin: auto;
+  width: auto;
+}
 
 .entry {
   display: block;
@@ -95,12 +128,6 @@ input[type='text'] {
   border: 2px solid orange;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-input[type='text']:focus {
-  border-color: #333;
   margin-left: auto;
   margin-right: auto;
 }
@@ -153,7 +180,6 @@ h3 {
 h4 {
   color: #ff0000;
   font-size: 2vw;
-
   font-family: 'Permanent Marker';
   font-size: 14px;
   font-style: normal;
@@ -163,20 +189,21 @@ h4 {
 }
 
 p {
-  font-family: 'Permanent Marker';
-  font-size: 14px;
+  color: orange;
+  text-shadow: 0.1vw 0.1vw #ff0000;
+  font-family: 'Lato';
+  font-size: 2vw;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
-  line-height: 20px;
 }
+
 blockquote {
   font-family: 'Permanent Marker';
-  font-size: 21px;
+  font-size: 2vw;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;
-  line-height: 30px;
 }
 pre {
   font-family: 'Permanent Marker';
