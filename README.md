@@ -13,7 +13,7 @@ Ever feel like the odds are too great... or mayber that you're just too odd?
 -Marie O.
 
 "I found all 12 of my friends on Chonky Cat."
--grandmajackie<br>
+-grandmajackie
 
 ## links
 
