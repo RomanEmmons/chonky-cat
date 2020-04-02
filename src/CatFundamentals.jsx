@@ -29,8 +29,8 @@ class CatFundamentals extends React.Component {
       { key: 'special_needs', label: 'Special Needs', value: '' },
       { key: 'primary', label: 'Breed', value: '' },
       { key: 'city', label: 'Location', value: '' },
-      { key: 'email', label: 'Email', value: '' },
-      { key: 'phone', label: 'Phone', value: '' }
+      { key: 'phone', label: 'Phone', value: '' },
+      { key: 'email', label: 'Email', value: '' }
     ];
     // assign values based on props
     for (let i = 0; i < store.length; i++) {
@@ -72,7 +72,7 @@ class CatFundamentals extends React.Component {
       }
       // split into arrays for table rows
       innerArr.push(store[i]);
-      if (i === 5 || i === 10) {
+      if (i === 2 || i === 5 || i === 8 || i === 10) {
         outerArr.push(innerArr);
         innerArr = [];
       }

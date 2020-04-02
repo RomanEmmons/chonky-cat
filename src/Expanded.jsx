@@ -1,6 +1,6 @@
 import React from 'react';
-import { keys } from '../keys.js';
 import CatFundamentals from './CatFundamentals.jsx';
+import { Carousel } from 'react-responsive-carousel';
 
 class Expanded extends React.Component {
   constructor(props) {
@@ -12,9 +12,17 @@ class Expanded extends React.Component {
     return (
       <div className="Expanded">
         <h1>{this.props.cat.name}</h1>
-        {this.props.cat.photos.map((photo, i) => {
-          return <img key={i} className="fullSizePhotos" src={photo}></img>;
-        })}{' '}
+        <div>
+          <Carousel showThumbs={false} dynamicHeight={true} width="auto">
+            {this.props.cat.photos.map((photo, i) => {
+              return (
+                <div>
+                  <img key={i} className="fullSizePhotos" src={photo}></img>
+                </div>
+              );
+            })}{' '}
+          </Carousel>
+        </div>
         <div>
           <div id="about">
             {this.props.description ? (

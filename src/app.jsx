@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './List.jsx';
+import CatCarousel from './CatCarousel.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,12 +54,17 @@ class App extends React.Component {
         <div className="banner">
           <h1>Chonky Cat</h1>
           <div className="entry">
-            <form onSubmit={this.handleSubmit}>
+            <form tabIndex="-1" onSubmit={this.handleSubmit}>
               <div className="label">
                 <label>5 Digit Zip Code:</label>
               </div>
-              <input className="zip" type="text" onChange={this.handleChange} />
-              <input type="submit" value="Submit" />
+              <input
+                tabIndex="-1"
+                className="zip"
+                type="text"
+                onChange={this.handleChange}
+              />
+              <input tabIndex="-1" type="submit" value="Submit" />
             </form>
           </div>
 
@@ -73,7 +79,8 @@ class App extends React.Component {
           </div>
         </div>
 
-        {this.state.cats ? <List cats={this.state.cats} /> : null}
+        {/* {this.state.cats ? <List cats={this.state.cats} /> : null} */}
+        {this.state.cats ? <CatCarousel cats={this.state.cats} /> : null}
       </div>
     );
   }
