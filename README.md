@@ -15,10 +15,9 @@ Ever feel like the odds are too great... or mayber that you're just too odd?
 "I found all 12 of my friends on Chonky Cat."
 -grandmajackie
 
-Home:
-http://ec2-54-67-5-147.us-west-1.compute.amazonaws.com:3000
+Home:<br></br>
 
-Related Links:
+Related Links:<br></br>
 https://www.cnet.com/news/this-cat-is-chonky-the-fat-cat-online-shrine-lifting-humans-from-despair/
 https://vetnutrition.tufts.edu/2016/05/think-you-have-a-fat-cat-the-ten-things-you-need-to-know/
 https://pets.webmd.com/news/20180211/the-purrfect-diet-for-your-fat-cat
