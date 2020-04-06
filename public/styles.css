@@ -5,17 +5,23 @@ body {
   background: url('https://media4.s-nbcnews.com/j/streams/2014/June/140605/2D274906032272-today-fat-cat-creation-140605-post-tease.fit-760w.jpg')
     no-repeat center center fixed;
   background-size: cover;
+  font-size: 19px;
+  font-weight: bold;
 }
 
 /* ABOUT */
 #about {
   display: inline-flex;
   text-align: left;
-  width: 60%;
   font-size: large;
+  font-weight: bold;
 }
 
 /* TABLE */
+.bold {
+  font-weight: bold;
+  font-size: large;
+}
 
 .table {
   text-align: center;
@@ -23,21 +29,16 @@ body {
   margin-right: auto;
 }
 
-.bold {
-  font-weight: bold;
-  font-size: large;
-}
-
 img {
   border-style: solid;
   border-width: large;
-  border-color: black;
+  border-color: orangered;
 }
 
 .cell {
-  color: black;
-  /* text-shadow: 0.1vw 0.1vw #ff0000; */
-  font-size: 1.5vw;
+  color: orange;
+  text-shadow: 0.1vw 0.1vw #ff0000;
+  font-size: large;
   text-align: left;
   padding: 0vw 2vw 2vw 0vw;
   font-size: large;
@@ -58,7 +59,6 @@ img {
 /* LIST */
 .List {
   text-align: center;
-  font-size: large;
 }
 
 /* LISTITEM */
@@ -71,7 +71,7 @@ img {
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-color: black;
+  border-color: orangered;
 
   /* border-radius: 1%; */
   margin: 3%;
@@ -88,7 +88,7 @@ img {
   display: inline-block;
   border-style: solid;
   border-width: large;
-  border-color: black;
+  border-color: orangered;
   /* border-radius: 1%; */
   margin: auto;
   width: auto;
@@ -110,13 +110,13 @@ img {
   background-color: grey;
   margin-top: -15px;
   padding-bottom: 3%;
-  border-bottom: 0.25vw solid black;
+  border-bottom: 0.25vw solid orangered;
 }
 
 /* FORM */
 
 .label {
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
   margin: auto;
   width: auto;
@@ -131,16 +131,17 @@ form {
   display: inline-block;
   font-family: 'Permanent Marker';
   color: #ff0000;
-  font-size: 1.5vw;
+  font-size: inherit;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
 input[type='text'] {
-  border: 2px solid black;
+  border: 2px solid orange;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  font-size: inherit;
   margin-left: auto;
   margin-right: auto;
 }
@@ -148,9 +149,6 @@ input[type='text'] {
 input[type='submit'] {
   /* padding: 5px 15px; */
   background: orange;
-  border: 2px solid black;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
   border: 0 none;
   cursor: pointer;
   -webkit-border-radius: 5px;
@@ -159,7 +157,7 @@ input[type='submit'] {
 
 /* TEXT */
 h1 {
-  color: black;
+  color: orange;
   text-shadow: 0.2vw 0.2vw #ff0000;
   font-family: 'Permanent Marker';
   font-size: 8vw;
@@ -172,9 +170,9 @@ h1 {
 }
 
 h2 {
-  color: black;
+  color: orange;
   text-align: center;
-  /* text-shadow: 0.2vw 0.2vw #ff0000; */
+  text-shadow: 0.2vw 0.2vw #ff0000;
   font-size: 4vw;
   font-family: 'Permanent Marker';
   font-style: normal;
@@ -184,7 +182,7 @@ h2 {
 
 h3 {
   text-align: center;
-  color: black;
+  color: orange;
   text-shadow: 0.2vw 0.2vw black;
   font-family: 'Permanent Marker';
   font-size: 3vw;
@@ -205,18 +203,18 @@ h4 {
 }
 
 p {
-  color: black;
-  /* text-shadow: 0.1vw 0.1vw #ff0000; */
+  color: orange;
+  text-shadow: 0.1vw 0.1vw #ff0000;
   font-family: 'Lato';
-  font-size: large;
+  font-size: x-large;
   font-style: normal;
   font-variant: normal;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 blockquote {
   font-family: 'Permanent Marker';
-  font-size: large;
+  font-size: 2vw;
   font-style: normal;
   font-variant: normal;
   font-weight: 400;

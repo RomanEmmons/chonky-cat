@@ -19,7 +19,7 @@ class CatFundamentals extends React.Component {
       { key: 'age', label: 'Age', value: '' },
       { key: 'gender', label: 'Gender', value: '' },
       { key: 'declawed', label: 'Declawed', value: '' },
-      { key: 'house_trained', label: 'House Trained', value: '' },
+      { key: 'primary', label: 'Breed', value: '' },
       { key: 'shots_current', label: 'Shots Current', value: '' },
       {
         key: 'spayed_neutered',
@@ -27,10 +27,10 @@ class CatFundamentals extends React.Component {
         value: '',
       },
       { key: 'special_needs', label: 'Special Needs', value: '' },
-      { key: 'primary', label: 'Breed', value: '' },
+      { key: 'house_trained', label: 'House Trained', value: '' },
+      { key: 'email', label: 'Email', value: '' },
       { key: 'city', label: 'Location', value: '' },
       { key: 'phone', label: 'Phone', value: '' },
-      { key: 'email', label: 'Email', value: '' },
     ];
     // assign values based on props
     for (let i = 0; i < store.length; i++) {

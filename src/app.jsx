@@ -14,7 +14,6 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.loseFocus = this.loseFocus.bind(this);
   }
 
   handleChange(event) {
@@ -48,9 +47,6 @@ class App extends React.Component {
     event.preventDefault();
   }
 
-  loseFocus() {
-    document.getElementById('form').blur();
-  }
   render() {
     return (
       <div>
@@ -61,12 +57,7 @@ class App extends React.Component {
               <div className="label">
                 <label>5 Digit Zip Code:</label>
               </div>
-              <input
-                className="zip"
-                type="text"
-                onClick={this.loseFocus}
-                onChange={this.handleChange}
-              />
+              <input className="zip" type="text" onChange={this.handleChange} />
               <input type="submit" value="Submit" />
             </form>
           </div>
