@@ -10,10 +10,11 @@ class App extends React.Component {
       zip: null,
       zipCodes: [],
       searching: false,
-      cats: []
+      cats: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loseFocus = this.loseFocus.bind(this);
   }
 
   handleChange(event) {
@@ -38,32 +39,35 @@ class App extends React.Component {
       $.ajax({
         method: 'GET',
         url: `http://localhost:3000/input/${cleanZip}`,
-        success: result => {
+        success: (result) => {
           // console.log('result!', result);
           this.setState({ cats: result, searching: true });
-        }
+        },
       });
     }
     event.preventDefault();
   }
 
+  loseFocus() {
+    document.getElementById('form').blur();
+  }
   render() {
     return (
       <div>
         <div className="banner">
           <h1>Chonky Cat</h1>
           <div className="entry">
-            <form tabIndex="-1" onSubmit={this.handleSubmit}>
+            <form id="form" onSubmit={this.handleSubmit}>
               <div className="label">
                 <label>5 Digit Zip Code:</label>
               </div>
               <input
-                tabIndex="-1"
                 className="zip"
                 type="text"
+                onClick={this.loseFocus}
                 onChange={this.handleChange}
               />
-              <input tabIndex="-1" type="submit" value="Submit" />
+              <input type="submit" value="Submit" />
             </form>
           </div>
 

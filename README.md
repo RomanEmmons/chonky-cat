@@ -9,7 +9,7 @@ Enter in your 5 digit zip code and instantly get connected to big cats that are 
 ## links
 
 Home:\
-http://ec2-18-144-70-214.us-west-1.compute.amazonaws.com:3000/
+http://ec2-52-53-188-174.us-west-1.compute.amazonaws.com:3000/
 
 Related Links:\
 https://www.cnet.com/news/this-cat-is-chonky-the-fat-cat-online-shrine-lifting-humans-from-despair/
