@@ -16,13 +16,6 @@ class Expanded extends React.Component {
           return <img key={i} className="fullSizePhotos" src={photo}></img>;
         })}{' '}
         <div>
-          <div id="about">
-            {this.props.description ? (
-              <p>{this.props.description}</p>
-            ) : (
-              <p>This chonk's story is a mystery!</p>
-            )}
-          </div>{' '}
           <CatFundamentals
             cat={this.props.cat}
             attributes={this.props.cat.attributes}
@@ -30,6 +23,13 @@ class Expanded extends React.Component {
             location={this.props.cat.contact.address.city}
             contact={this.props.cat.contact}
           />
+          <div id="about">
+            {this.props.description ? (
+              <p>{this.props.description}</p>
+            ) : (
+              <p>This chonk's story is a mystery!</p>
+            )}
+          </div>{' '}
         </div>
       </div>
     );
