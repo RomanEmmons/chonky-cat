@@ -147,9 +147,12 @@ input[type='text'] {
 }
 
 input[type='submit'] {
-  /* padding: 5px 15px; */
+  padding: 5px 15px;
   background: orange;
   border: 0 none;
+  font-size: inherit;
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
