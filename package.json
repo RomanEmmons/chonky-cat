@@ -36,7 +36,7 @@
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "exec-sql": "^2.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "file-system": "^2.2.2",
     "jquery": "^3.4.1",
     "mongoose": "^5.9.6",
